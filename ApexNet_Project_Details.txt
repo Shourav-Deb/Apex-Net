@@ -1,0 +1,70 @@
+
+================ ApexNet ~ Apex University Multi-Campus Network Summary ================
+
+👨‍💻 Author: Shourav Deb
+📁 Project: ApexNet - Multi-Campus University Network Simulation
+🧰 Platform: Cisco Packet Tracer
+
+-------------------------------------------------------------------------------
+🖥️ Number of Routers and Their Campuses with LAN IP Configuration Per Campus:
+-------------------------------------------------------------------------------
+Router1: Main Building      192.168.1.0/24    (Gateway: 192.168.1.1)
+Router2: Library            192.168.2.0/24    (Gateway: 192.168.2.1)
+Router3: Playground         192.168.3.0/24    (Gateway: 192.168.3.1)
+Router4: Admin Office       192.168.4.0/24    (Gateway: 192.168.4.1)
+Router5: Research Lab       192.168.5.0/24    (Gateway: 192.168.5.1)
+Router6: Server Router      192.168.100.0/24  (Gateway: 192.168.100.1)
+
+-------------------------------------------------------------------------------
+🔗 Serial Link Connections and IPs (All /30 Subnets):
+-------------------------------------------------------------------------------
+Main ↔ Research:         10.0.0.0/30     Main: 10.0.0.1     	Research: 10.0.0.2
+Main ↔ Admin:            10.0.0.4/30     Main: 10.0.0.5     	Admin:    10.0.0.6
+Main ↔ Server:           10.0.0.8/30     Main: 10.0.0.9     	Server:   10.0.0.10
+Playground ↔ Library:    10.0.0.12/30    Playground: 10.0.0.13  Library: 10.0.0.14
+Playground ↔ Admin:      10.0.0.16/30    Playground: 10.0.0.17  Admin:   10.0.0.18
+Library ↔ Research:      10.0.0.20/30    Library: 10.0.0.21     Research:10.0.0.22
+
+-------------------------------------------------------------------------------
+📡 OSPF Configuration:
+-------------------------------------------------------------------------------
+- All routers are running: router ospf 1
+- Each router advertises:
+  - Its LAN: network 192.168.X.0 0.0.0.255 area 0
+  - All connected serials: network 10.0.X.X 0.0.0.3 area 0
+
+-------------------------------------------------------------------------------
+💻 End Devices (Example Per Campus):
+-------------------------------------------------------------------------------
+Main Building:      1 Router, 1 Switch, 1 Acess Point, 3 PCs, 2 Laptops
+Library:            1 Router, 1 Switch, 1 Acess Point, 3 PCs, 3 Laptops
+Playground:         1 Router, 1 Switch, 1 Acess Point, 2 PCs, 1 Laptops
+Admin Office:       1 Router, 1 Switch, 1 Acess Point, 4 PCs, 2 Laptops
+Research Lab:       1 Router, 1 Switch, 1 Acess Point, 4 PCs, 1 Laptops
+Server LAN:         1 Router, 1 Switch, DHCP Server, DNS Server, Web Server
+
+-------------------------------------------------------------------------------
+🛰️ Central Services (Server LAN - 192.168.100.0/24):
+-------------------------------------------------------------------------------
+DHCP Server:        192.168.100.10 (assigns IP to all campuses)
+DNS Server:         192.168.100.11 (maps apex.edu)
+Web Server:         192.168.100.12 (hosts university homepage)
+Router Gateway:     192.168.100.1
+
+-------------------------------------------------------------------------------
+🧪 Network Functionality Tested:
+-------------------------------------------------------------------------------
+✔ Inter-campus ping
+✔ Central DHCP lease to all PCs/Laptops
+✔ DNS resolution from any client
+✔ Web browsing to http://apex.edu
+✔ OSPF adjacency and full routing table
+
+-------------------------------------------------------------------------------
+📬 Contact:
+-------------------------------------------------------------------------------
+Author: Shourav Deb
+GitHub: https://github.com/shourav-deb
+Email: heyneeddev@gmail.com
+
+===============================================================================
